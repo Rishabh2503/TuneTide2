@@ -18,14 +18,14 @@ const GenreCard = ({ genre, image }) => {
   };
 
   return (
-    <Link to={`/genre/${genre}`} onClick={() => handleemotionsClick(genre)}>
-      <div className="genre-card">
-        <div className="flex items-center gap-2">
-          <img src={image} alt={`${genre} Mode`} className="genre-image" />
-          <p className="genre-name text-white ml-4">{genre}</p>
-        </div>
+    <Link to={`/genre/${genre}`}>
+    <div className="genre-card">
+      <div className="flex items-center gap-2">
+        <img src={image} alt={`${genre} Mode`} className="genre-image" />
+        <p className="genre-name text-white ml-4">{genre}</p>
       </div>
-    </Link>
+    </div>
+  </Link>
   );
 };
 export default GenreCard;

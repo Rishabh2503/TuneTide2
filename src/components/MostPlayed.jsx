@@ -98,9 +98,12 @@ const TopPlay = () => {
         </Link>
       </div>
       <div className="flex flex-row flex-wrap gap-3 w-24 justify-between items-center">
-  {genres.map((genre) => (
-    <GenreCard key={genre.name} genre={genre.name} image={genre.image} />
-  ))}
+      {genres.map((genre) => (
+  <Link key={genre.linkTo} to={genre.linkTo}>
+    <GenreCard genre={genre.name} image={genre.image} />
+  </Link>
+))}
+
 </div>
         <div className="lg:mt-5 flex flex-row justify-between items-center">
           <h2 className="text-white font-bold text-2xl">Charts</h2>

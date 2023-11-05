@@ -25,10 +25,11 @@ const App = () => {
         element={isAuthenticated ? <MainPage /> : <LoginPage onLoginSuccess={handleLoginSuccess} />}
       />
       <Route path="/signup" element={<SignupPage />} />
-      <Route path="/genre/:genre" element={<HappyPage />} />
-      <Route path="/genre/:genre" element={<SadPage />} />
-      <Route path="/genre/:genre" element={<EnergeticPage />} />
-      <Route path="/genre/:genre" element={<CalmPage />} />
+      <Route path="/genre/happy" element={<HappyPage />} />
+<Route path="/genre/sad" element={<SadPage />} />
+<Route path="/genre/energetic" element={<EnergeticPage />} />
+<Route path="/genre/calm" element={<CalmPage />} />
+
 
     </Routes>
   );
