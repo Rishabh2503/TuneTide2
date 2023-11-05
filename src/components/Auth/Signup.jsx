@@ -110,19 +110,16 @@ const Signup = ({}) => {
           </div>
           <div className="mb-4 emotion-options">
             <label className="text-white">Select Emotion:</label>
-            <div className="emotion-images">
+            <div className="emotion-images flex flex-row gap-2 justify-center items-center">
               {Object.keys(EmotionImages).map((emotion) => (
                 <a
                   key={emotion}
-                  href="#"
+                  // href="#"
                   onClick={() => handleEmotionClick(emotion)}
-                  className={`emotion-image ${selectedEmotion === emotion ? "selected" : ""}`}
-                >
-                  <img
-                    src={EmotionImages[emotion]}
-                    alt={emotion}
-                    width={40}
-                  />
+                  className={`emotion-image ${
+                    selectedEmotion === emotion ? "selected" : ""
+                  }`}>
+                  <img src={EmotionImages[emotion]} alt={emotion} width={40} />
                 </a>
               ))}
             </div>

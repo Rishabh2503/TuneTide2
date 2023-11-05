@@ -3,6 +3,10 @@ import MainPage from "./MainPage";
 import LoginPage from "./components/Auth/Login";
 import SignupPage from "./components/Auth/Signup";
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import HappyPage from './components/emotions/HappyPage';
+import SadPage from './components/emotions/SadPage';
+import EnergeticPage from './components/emotions/EnergeticPage';
+import CalmPage from './components/emotions/CalmPage';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -17,10 +21,15 @@ const App = () => {
   return (
     <Routes>
       <Route
-        path="/"
+        path="*"
         element={isAuthenticated ? <MainPage /> : <LoginPage onLoginSuccess={handleLoginSuccess} />}
       />
       <Route path="/signup" element={<SignupPage />} />
+      <Route path="/genre/:genre" element={<HappyPage />} />
+      <Route path="/genre/:genre" element={<SadPage />} />
+      <Route path="/genre/:genre" element={<EnergeticPage />} />
+      <Route path="/genre/:genre" element={<CalmPage />} />
+
     </Routes>
   );
 };

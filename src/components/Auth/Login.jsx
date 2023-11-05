@@ -20,7 +20,8 @@ const Login = ({ onLoginSuccess }) => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleEmotionClick = (emotion) => {
+  const handleEmotionClick = (e, emotion) => {
+    e.preventDefault();
     setSelectedEmotion(emotion);
   };
 
@@ -49,7 +50,9 @@ const Login = ({ onLoginSuccess }) => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-200 to-[#6e6ef9]">
       <div className="bg-white bg-opacity-25 p-8 rounded-lg shadow-md w-96 backdrop-blur-md">
-        <h2 className="text-3xl font-semibold text-center text-white mb-4">Log In</h2>
+        <h2 className="text-3xl font-semibold text-center text-white mb-4">
+          Log In
+        </h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="text-white">Username</label>
@@ -73,14 +76,15 @@ const Login = ({ onLoginSuccess }) => {
           </div>
           <div className="mb-4">
             <label className="text-white">Select Emotion:</label>
-            <div className="emotion-options flex space-x-2">
+            <div className="emotion-options flex space-x-2 justify-center items-center">
               {Object.keys(EmotionImages).map((emotion) => (
                 <a
                   key={emotion}
-                  href="#"
-                  onClick={() => handleEmotionClick(emotion)}
-                  className={`emotion-image ${selectedEmotion === emotion ? "selected" : ""}`}
-                >
+                  href=""
+                  onClick={(e) => handleEmotionClick(e, emotion)}
+                  className={`emotion-image ${
+                    selectedEmotion === emotion ? "selected" : ""
+                  }`}>
                   <img src={EmotionImages[emotion]} alt={emotion} width={40} />
                 </a>
               ))}
@@ -88,8 +92,7 @@ const Login = ({ onLoginSuccess }) => {
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold p-2 rounded-md"
-          >
+            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold p-2 rounded-md">
             {loading ? "Loading..." : "Login"}
           </button>
         </form>

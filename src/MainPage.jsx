@@ -2,6 +2,10 @@ import React from "react";
 import { useSelector } from "react-redux"; // Add this line
 import { Route, Routes } from "react-router-dom";
 // import { BrowserRouter as Router,} from "react-router-dom";
+import HappyPage from "./components/emotions/HappyPage";
+import SadPage from "./components/emotions/SadPage";
+import EnergeticPage from "./components/emotions/EnergeticPage";
+import CalmPage from "./components/emotions/CalmPage";
 
 import { Searchbar, Sidebar, MusicPlayer, TopPlay } from "./components";
 import {
@@ -14,7 +18,8 @@ import {
   Podcast,
 } from "./pages";
 import Login from "./components/Auth/Login";
-import Signup from "./components/Auth/Signup"
+import Signup from "./components/Auth/Signup";
+
 const MainPage = () => {
   const { activeSong } = useSelector((state) => state.player);
 
@@ -34,10 +39,16 @@ const MainPage = () => {
               <Route path="/artists/:id" element={<ArtistDetails />} />
               <Route path="/songs/:songid" element={<SongDetails />} />
               <Route path="/search/:searchTerm" element={<Search />} />
+      <Route path="/genre/:genre" element={<HappyPage />} />
+      <Route path="/genre/:genre" element={<SadPage />} />
+      <Route path="/genre/:genre" element={<EnergeticPage />} />
+      <Route path="/genre/:genre" element={<CalmPage />} />
+
+              {/* <Route path="/sad" element={<SadPage />} />
+        <Route path="/energetic" element={<EnergeticPage />} />
+        <Route path="/calm" element={<CalmPage />} /> */}
               {/* <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} /> */}
-
-              
             </Routes>
           </div>
           <div className="xl:sticky relative top-0 h-fit w-[20.1rem]">

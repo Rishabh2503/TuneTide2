@@ -7,10 +7,11 @@ import {
   HiOutlinePhotograph,
   HiOutlineUserGroup,
 } from "react-icons/hi";
+
 import { RiCloseLine } from "react-icons/ri";
 
 // import { logo } from '../assets';
-import logo from "../assets/Group (2).png";
+import logo from "../assets/Tune Tide.png";
 const links = [
   { name: "Home", to: "/", icon: HiOutlineHome },
   { name: "Podcast You", to: "/podcast", icon: HiOutlinePhotograph },

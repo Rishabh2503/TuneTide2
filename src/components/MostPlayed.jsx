@@ -15,16 +15,17 @@ import CalmModeImage from '../assets/3.png';
 
 import "swiper/css";
 import "swiper/css/free-mode";
-const GenreCard = ({ genre, image }) => (
-  <Link to={`/genre/${genre}`}>
-    <div className="genre-card">
-      <div className="flex items-center gap-2">
-        <img src={image} alt={`${genre} Mode`} className="genre-image" />
-        <p className="genre-name text-white ml-4">{genre}</p>
-      </div>
-    </div>
-  </Link>
-);
+import GenreCard from "./GenreCard";
+// const GenreCard = ({ genre, image }) => (
+//   <Link to={`/genre/${genre}`}>
+//   <div className="genre-card">
+//     <div className="flex items-center gap-2">
+//       <img src={image} alt={`${genre} Mode`} className="genre-image" />
+//       <p className="genre-name text-white ml-4">{genre}</p>
+//     </div>
+//   </div>
+// </Link>
+// );
 
 const MostPlayedCard = ({
   song,
@@ -80,10 +81,10 @@ const TopPlay = () => {
 
   const topPlays = data?.slice(0, 5);
   const genres = [
-    { name: 'Happy Mode', image: HappyModeImage },
-    { name: 'Sad Mode', image: SadModeImage },
-    { name: 'Energetic Mode', image: EnergeticModeImage },
-    { name: 'Calm Mode', image: CalmModeImage },
+    { name: "Happy Mode", image: HappyModeImage, linkTo: "/happy" },
+    { name: "Sad Mode", image: SadModeImage, linkTo: "/sad" },
+    { name: "Energetic Mode", image: EnergeticModeImage, linkTo: "/energetic" },
+    { name: "Calm Mode", image: CalmModeImage, linkTo: "/calm" },
   ];
   return (
     <div

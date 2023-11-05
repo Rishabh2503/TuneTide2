@@ -2,7 +2,7 @@ import React from 'react';
 import update from "..//assets/update.png"
 
 
-const CountryTracks = () => {
+const Podcast = () => {
   return (
     <div>
       <h3 className="font-bold  text-white mr-3 mt-24 text-2xl text-center">Music Around you ...</h3>
@@ -12,4 +12,4 @@ const CountryTracks = () => {
   )
 }
 
-export default CountryTracks
+export default Podcast
